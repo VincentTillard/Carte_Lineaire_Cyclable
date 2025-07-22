@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -30,24 +29,10 @@
       font-weight: bold;
       margin-top: 6px;
     }
-    /* Style iframe sous la carte */
-    #datanormandie-iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      margin-top: 20px;
-    }
   </style>
 </head>
 <body>
   <div id="map"></div>
-
-  <!-- Intégration iframe sous la carte -->
-  <iframe 
-    id="datanormandie-iframe" 
-    src="https://www.datanormandie.fr/visualisation/information/?id=cop_mieux_produire"
-    title="Visualisation DataNormandie - COP Mieux Produire">
-  </iframe>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
@@ -121,17 +106,17 @@
       let variationText = "";
       if (v2022 > 0) {
         const variation = ((v2024 - v2022) / v2022) * 100;
-        variationText = `<div class="popup-variation">Évolution 2022 → 2024 : ${variation.toFixed(1)}%</div>`;
+        variationText = <div class="popup-variation">Évolution 2022 → 2024 : ${variation.toFixed(1)}%</div>;
       } else {
-        variationText = `<div class="popup-variation">Évolution 2022 → 2024 : N/A</div>`;
+        variationText = <div class="popup-variation">Évolution 2022 → 2024 : N/A</div>;
       }
 
-      const popupContent = `
+      const popupContent = 
         <strong>${nom}</strong><br/>
         ${valeurAffichee} km / 1000 hab (2022)<br/>
         <canvas id="${id}" width="300" height="150"></canvas>
         ${variationText}
-      `;
+      ;
 
       layer.bindPopup(popupContent);
 
@@ -202,5 +187,5 @@
     legend.addTo(map);
   </script>
 </body>
-</html>
+</html> 
 
