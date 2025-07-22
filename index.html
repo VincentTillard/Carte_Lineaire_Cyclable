@@ -30,10 +30,24 @@
       font-weight: bold;
       margin-top: 6px;
     }
+    /* Style iframe sous la carte */
+    #datanormandie-iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
+
+  <!-- Intégration iframe sous la carte -->
+  <iframe 
+    id="datanormandie-iframe" 
+    src="https://www.datanormandie.fr/visualisation/information/?id=cop_mieux_produire"
+    title="Visualisation DataNormandie - COP Mieux Produire">
+  </iframe>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
@@ -188,4 +202,5 @@
     legend.addTo(map);
   </script>
 </body>
-</html> 
+</html>
+
